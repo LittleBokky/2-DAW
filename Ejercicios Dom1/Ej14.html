@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocultar y Eliminar Elementos</title>
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ocultar y Eliminar Elementos</h2>
+
+    <p onclick="ocultarElemento(this)" ondblclick="eliminarElemento(this)">Elemento 1</p>
+    <p onclick="ocultarElemento(this)" ondblclick="eliminarElemento(this)">Elemento 2</p>
+    <p onclick="ocultarElemento(this)" ondblclick="eliminarElemento(this)">Elemento 3</p>
+
+    <button onclick="reaparecerElementos()">Reaparecer</button>
+
+    <script>
+        function ocultarElemento(elemento) {
+            elemento.classList.add('oculto');
+        }
+
+        function eliminarElemento(elemento) {
+            elemento.remove();
+        }
+
+        function reaparecerElementos() {
+            var elementosOcultos = document.querySelectorAll('.oculto');
+            elementosOcultos.forEach(function(elemento) {
+                elemento.classList.remove('oculto');
+            });
+        }
+    </script>
+</body>
+</html>

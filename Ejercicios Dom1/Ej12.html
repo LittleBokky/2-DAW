@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Casi Primos</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+
+        .casiPrimo {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Números Casi Primos</h2>
+    
+    <button onclick="calcularCasiPrimos()">Calcular número casi primos</button>
+    
+    <table id="tabla"></table>
+
+    <script>
+        function crearTabla() {
+            var tabla = document.getElementById('tabla');
+
+            for (var i = 0; i < 100; i++) {
+                var fila = tabla.insertRow(i);
+
+                for (var j = 0; j < 100; j++) {
+                    var celda = fila.insertCell(j);
+                    celda.textContent = i * 100 + j + 1;
+                }
+            }
+        }
+
+        function calcularCasiPrimos() {
+            var tabla = document.getElementById('tabla');
+
+            for (var i = 0; i < tabla.rows.length; i++) {
+                for (var j = 0; j < tabla.rows[i].cells.length; j++) {
+                    var numero = parseInt(tabla.rows[i].cells[j].textContent);
+
+                    if (esCasiPrimo(numero)) {
+                        tabla.rows[i].cells[j].classList.add('casiPrimo');
+                    }
+                }
+            }
+        }
+
+        function esCasiPrimo(numero) {
+    if (numero <= 1) {
+        return false;
+    }
+
+    var divisores = 0;
+
+    for (var i = 1; i <= numero; i++) {
+        if (numero % i === 0) {
+            divisores++;
+        }
+
+        if (divisores > 3) {
+            return false; 
+        }
+    }
+
+    return divisores === 3; 
+}
+        window.onload = function() {
+            crearTabla();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes Aleatorios</title>
+</head>
+<body>
+    <h2>Checkboxes Aleatorios</h2>
+
+    <button onclick="marcarTodos()">Marcar Todos</button>
+    <button onclick="desmarcarTodos()">Desmarcar Todos</button>
+
+    <form id="formulario">
+    </form>
+
+    <script>
+        function generarCheckboxes() {
+            var formulario = document.getElementById('formulario');
+            var numerosAleatorios = Array.from({ length: 100 }, (_, index) => index + 1);
+            numerosAleatorios.sort(() => Math.random() - 0.5);
+
+            numerosAleatorios.forEach(function (numero) {
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = 'checkbox' + numero;
+                checkbox.value = numero;
+
+                var label = document.createElement('label');
+                label.innerHTML = 'Checkbox ' + numero;
+                label.setAttribute('for', 'checkbox' + numero);
+
+                formulario.appendChild(checkbox);
+                formulario.appendChild(label);
+            });
+        }
+
+        function marcarTodos() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = true;
+            });
+        }
+
+        function desmarcarTodos() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = false;
+            });
+        }
+
+        window.onload = function () {
+            generarCheckboxes();
+        };
+    </script>
+</body>
+</html>

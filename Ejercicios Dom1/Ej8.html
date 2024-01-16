@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej8</title>
+</head>
+<body>
+    <p>
+        <label for="valor1">Ingrese primer valor:</label>
+        <input type="number" id="valor1" />
+    </p>
+    <p>
+        <label for="valor2">Ingrese segundo valor:</label>
+        <input type="number" id="valor2" />
+    </p>
+    <p>
+        <select id="operacion">
+            <option value="suma">Sumar</option>
+            <option value="resta">Restar</option>
+        </select>
+    </p>
+    <p>
+        <input type="button" value="Operar" id="calculo" />
+    </p>
+    <p id="resultado1"></p>
+    <select multiple="multiple" id="operaciones">
+        <option value="suma">Sumar</option>
+        <option value="resta">Restar</option>
+    </select>
+    <p>
+        <input type="button" value="Operar" id="calculomultiple" />
+    </p>
+    <p id="resultado2"></p>
+
+    <script>
+        var valor1Input = document.getElementById('valor1');
+        var valor2Input = document.getElementById('valor2');
+        var operacionSelect = document.getElementById('operacion');
+        var calculoButton = document.getElementById('calculo');
+        var resultado1P = document.getElementById('resultado1');
+        var operacionesSelect = document.getElementById('operaciones');
+        var calculoMultipleButton = document.getElementById('calculomultiple');
+        var resultado2P = document.getElementById('resultado2');
+
+        calculoButton.addEventListener('click', function () {
+            var valor1 = parseFloat(valor1Input.value);
+            var valor2 = parseFloat(valor2Input.value);
+            var operacion = operacionSelect.value;
+
+            if (operacion === 'suma') {
+                resultado1P.textContent = 'Resultado: ' + (valor1 + valor2);
+            } else if (operacion === 'resta') {
+                resultado1P.textContent = 'Resultado: ' + (valor1 - valor2);
+            }
+        });
+
+        calculoMultipleButton.addEventListener('click', function () {
+            var valor1 = parseFloat(valor1Input.value);
+            var valor2 = parseFloat(valor2Input.value);
+
+            for (var i = 0; i < operacionesSelect.options.length; i++) {
+                if (operacionesSelect.options[i].selected) {
+                    var operacion = operacionesSelect.options[i].value;
+
+                    if (operacion === 'suma') {
+                        resultado2P.textContent += 'Suma: ' + (valor1 + valor2) + ' ';
+                    } else if (operacion === 'resta') {
+                        resultado2P.textContent += 'Resta: ' + (valor1 - valor2) + ' ';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
