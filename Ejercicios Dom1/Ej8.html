@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej8</title>
+    <title>Ejercicio8</title>
 </head>
 <body>
     <p>
@@ -59,6 +59,7 @@
         calculoMultipleButton.addEventListener('click', function () {
             var valor1 = parseFloat(valor1Input.value);
             var valor2 = parseFloat(valor2Input.value);
+            resultado2P.textContent = '';
 
             for (var i = 0; i < operacionesSelect.options.length; i++) {
                 if (operacionesSelect.options[i].selected) {
@@ -75,3 +76,4 @@
     </script>
 </body>
 </html>
+
