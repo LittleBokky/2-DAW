@@ -35,18 +35,20 @@
 
     <script>
         const enlaces = document.getElementsByTagName('a');
-        document.write('1. Número de enlaces de la página:', enlaces.length, '<br>');
+        document.write('Número de enlaces de la página:', enlaces.length, '<br>');
 
         if (enlaces.length >= 2) {
             const penultimoEnlace = enlaces[enlaces.length - 2];
             const direccionPenultimoEnlace = penultimoEnlace.getAttribute('href');
-            document.write('2. Dirección a la que enlaza el penúltimo enlace:', direccionPenultimoEnlace, '<br>');
+            document.write('Dirección a la que enlaza el penúltimo enlace:', direccionPenultimoEnlace, '<br>');
         }
         const enlacesPrueba = document.querySelectorAll('a[href="http://prueba"]');
-        document.write('3. Número de enlaces que enlazan a http://prueba:', enlacesPrueba.length, '<br>');
+        document.write('Número de enlaces que enlazan a http://prueba:', enlacesPrueba.length, '<br>');
 
         const tercerParrafoEnlaces = document.querySelectorAll('p:nth-child(3) a');
-        document.write('4. Número de enlaces del tercer párrafo:', tercerParrafoEnlaces.length, '<br>');
+        document.write('Número de enlaces del tercer párrafo:', tercerParrafoEnlaces.length, '<br>');
     </script>
 </body>
 </html>
+
+
