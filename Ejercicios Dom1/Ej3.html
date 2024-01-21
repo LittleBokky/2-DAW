@@ -7,7 +7,12 @@
     <title>Ej3</title>
     <style>
         .oculto {
-            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
         }
     </style>
 </head>
@@ -24,7 +29,7 @@
         function muestra() {
             var adicional = document.querySelector('.adicional');
 
-            adicional.style.display = 'inline';
+            adicional.classList.add('visible');
 
             var enlace = document.querySelector('.enlace');
             enlace.style.display = 'none';
