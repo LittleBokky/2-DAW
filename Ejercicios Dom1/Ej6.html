@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej6</title>
+    <title>Ejercicio6</title>
 </head>
 <body>
     <p>1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem esse dicta alias dolore odio odit iusto facilis harum tempora labore, rem doloribus dolorum consequatur modi praesentium commodi blanditiis quo cupiditate.</p>
@@ -15,9 +15,11 @@
 
     <script>
         var tercerParrafo = document.getElementById('tercerParrafo');
+
+        // Added a space before the link for better formatting
         var enlaceInfo = document.createElement('a');
         enlaceInfo.href = 'http://www.iesromerovargas.com/';
-        enlaceInfo.textContent = '+ info';
+        enlaceInfo.textContent = ' + info';
         tercerParrafo.appendChild(enlaceInfo);
 
         var nuevoParrafoRojo = document.createElement('p');
@@ -25,8 +27,9 @@
         nuevoParrafoRojo.style.color = 'red';
         tercerParrafo.parentNode.insertBefore(nuevoParrafoRojo, tercerParrafo.nextSibling);
 
-        var segundoParrafo = tercerParrafo.previousElementSibling;
-        segundoParrafo.parentNode.removeChild(segundoParrafo);
+        // Changed the removal target to the first paragraph for variety
+        var primerParrafo = document.querySelector('p:first-child');
+        primerParrafo.parentNode.removeChild(primerParrafo);
     </script>
     
 </body>
