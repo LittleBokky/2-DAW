@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html>
- <head>
- <meta charset="utf-8" />
- <title>Prueba</title>
- </head>
- <body>
- <h1>Lenguaje Python</h1>
- <p>Python fue creado a finales de los años ochenta.</p>
- <p>El creador de Python es Guido van Rossum.</p>
+<head>
+  <meta charset="utf-8" />
+  <title>Prueba</title>
+</head>
+<body>
+  <h1>Lenguaje Python</h1>
+  <p>Python fue creado a finales de los años ochenta.</p>
+  <p>El creador de Python es Guido van Rossum.</p>
 
- <script>
-   document.body.style.backgroundColor = 'yellow';
+  <script>
+    const estiloCuerpo = document.body.style;
 
-   document.body.style.color = '#f0f';
+    estiloCuerpo.backgroundColor = 'yellow';
+    estiloCuerpo.color = '#f0f';
+    estiloCuerpo.fontFamily = 'Courier';
+    estiloCuerpo.margin = '40px';
+    estiloCuerpo.border = '1px solid #f00';
+    estiloCuerpo.padding = '20px';
 
-   document.body.style.fontFamily = 'Courier';
+    setInterval(() => {
+      estiloCuerpo.visibility = (estiloCuerpo.visibility === 'visible') ? 'hidden' : 'visible';
+    }, 1000);
 
-   document.body.style.margin = '40px';
-
-   document.body.style.border = '1px solid #f00';
-
-   document.body.style.padding = '20px';
-
-   setTimeout(() => {
-     document.body.style.visibility = 'hidden';
-   }, 3000);
-
-   setInterval(() => {
-     if (document.body.style.visibility === 'visible') {
-       document.body.style.visibility = 'hidden';
-     } else {
-       document.body.style.visibility = 'visible';
-     }
-   }, 1000);
- </script>
- </body>
+    setTimeout(() => {
+      estiloCuerpo.visibility = 'hidden';
+    }, 3000);
+  </script>
+</body>
 </html>
