@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej4</title>
+    <title>Ej4 - Updated</title>
 </head>
 <body>
     <ul id="lista">
@@ -14,18 +14,12 @@
         <li>Phasellus libero</li>
         <li>Maecenas nisl arcu</li>
     </ul>
-    <input type="button" value="Añadir elemento" onclick="anade();">
+    <button onclick="anadeElemento()">Añadir elemento</button>
 
     <script>
-        function anade() {
-            var nuevoElemento = document.createElement('li');
-
-            var texto = document.createTextNode('Nuevo elemento');
-            nuevoElemento.appendChild(texto);
-
+        function anadeElemento() {
             var lista = document.getElementById('lista');
-
-            lista.appendChild(nuevoElemento);
+            lista.innerHTML += '<li>Nuevo elemento</li>';
         }
     </script>
 </body>
