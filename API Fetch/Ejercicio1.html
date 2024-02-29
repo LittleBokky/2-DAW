@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>fetch('https://swapi.dev/api/people/')
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error('Ocurrió un error al obtener los datos de la API.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const peopleList = document.createElement('ul');
+                data.results.forEach(person => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = person.name;
+                    peopleList.appendChild(listItem);
+                });
+                document.body.appendChild(peopleList);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+
+</html>

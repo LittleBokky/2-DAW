@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fetch('https://freegeoip.app/json/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ocurrió un error al obtener los datos de la API.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const country = document.createElement('p');
+                country.textContent = `País: ${data.country_name}`;
+                document.body.appendChild(country);
+
+                const city = document.createElement('p');
+                city.textContent = `Ciudad: ${data.city}`;
+                document.body.appendChild(city);
+
+                const zipCode = document.createElement('p');
+                zipCode.textContent = `Código Postal: ${data.zip_code}`;
+                document.body.appendChild(zipCode);
+
+                const ip = document.createElement('p');
+                ip.textContent = `IP: ${data.ip}`;
+                document.body.appendChild(ip);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    </script>
+</body>
+
+</html>

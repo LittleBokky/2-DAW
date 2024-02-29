@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fetch('https://apis.datos.gob.ar/georef/api/provincias')
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error('Ocurrió un error al obtener los datos de la API.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const provinciasList = document.createElement('ul');
+                data.provincias.forEach(provincia => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Nombre: ${provincia.nombre}, ID: ${provincia.id}, Latitud: ${provincia.centroide.lat}, Longitud: ${provincia.centroide.lon}`;
+                    provinciasList.appendChild(listItem);
+                });
+                document.body.appendChild(provinciasList);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+
+</html>
