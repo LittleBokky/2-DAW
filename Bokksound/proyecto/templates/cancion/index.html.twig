@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Canciones{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Canciones</h1>
+
+        <div class="row">
+            {% for cancion in cancions %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('images/' ~ cancion.foto) }}" class="card-img-top img-fluid" alt="{{ cancion.titulo }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ cancion.titulo }}</h5>
+                            <p class="card-text">{{ cancion.autor }}</p>
+                            <audio controls style="width: 100%">
+                                <source src="{{ asset('music/' ~ cancion.audio)}}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <a href="{{ path('app_cancion_show', {'id': cancion.id}) }}" class="btn btn-primary">Ver</a>
+                            <a href="{{ path('app_cancion_edit', {'id': cancion.id}) }}" class="btn btn-secondary">Editar</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-12">
+                    <p class="text-center">No se encontraron canciones.</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ path('app_cancion_new') }}" class="btn btn-success btn-lg">Añadir canción</a>
+        </div>
+    </div>
+{% endblock %}

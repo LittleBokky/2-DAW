@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bokksound
+{% endblock %}
+
+{% block body %}
+	<style>
+		/* Estilos personalizados */
+		body {
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to bottom, #87CEEB, #343a40);
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+		}
+
+		.container {
+			margin-top: 50px;
+			text-align: center;
+		}
+
+		h1 {
+			color: black;
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			font-size: 27px;
+		}
+
+		h4 {
+			color: #fff;
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			text-align: center;
+			font-size: 21px;
+		}
+
+		.navbar-brand {
+			margin-right: 70px;
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		}
+
+		/* Estilos para el logo */
+		.navbar-brand img {
+			max-width: 40px; /* Ajusta el tamaño del logo */
+			margin-right: 10px; /* Espacio entre el logo y el texto */
+			vertical-align: middle; /* Alinear verticalmente con el texto */
+		}
+
+		/* Estilos para los enlaces */
+		.navbar-nav .nav-link {
+			font-size: 20px; /* Tamaño de fuente más grande */
+			transition: font-size 0.3s; /* Transición suave de tamaño de fuente */
+		}
+
+		.navbar-nav .nav-link:hover {
+			font-size: 22px; /* Tamaño de fuente más grande al pasar el ratón */
+		}
+
+		/* Degradado para la barra de navegación */
+		.navbar {
+			background-image: linear-gradient(to right, #ff4500, #ffa500); /* Degradado de rojo a naranja */
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+		}
+	</style>
+
+	</nav>
+
+	<div class="container">
+		<h1 class="mt-5">¡BIENVENIDO A BOKKSOUND, LA MEJOR APP DE MÚSICA EN DIRECTO!</h1>
+		<img src="../uploads/images/logo.png" alt="logo" style="max-width: 65%;">
+		<h4>Aquí podrás escuchar todo tipo de canciones, de cualquier época o año, sea cuál sea tu gusto, en el instante que quieras</h4>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
