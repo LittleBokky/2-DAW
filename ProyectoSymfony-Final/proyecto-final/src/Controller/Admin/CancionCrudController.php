@@ -20,9 +20,9 @@ class CancionCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('canciones_id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            IdField::new('id'),
+            TextField::new('Autor'),
+            TextField::new('Album'),
 
             ImageField::new('Audio', 'Archivo de audio')
                 ->setBasePath('/uploads/music')

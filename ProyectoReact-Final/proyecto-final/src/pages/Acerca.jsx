@@ -14,7 +14,6 @@ const Acerca = () => {
         <p className='pacerca'>Ya sea que sea un apasionado seguidor del motociclismo o simplemente esté interesado en descubrir más sobre el emocionante mundo del MotoGP, 
         ¡MotoGP Jerez 2024 es su destino definitivo! Únase a nosotros mientras celebramos la velocidad, la habilidad y la emoción de una de las competencia
         s más emocionantes del mundo del deporte de motor.
-
         ¡Gracias por acompañarnos en esta emocionante aventura!</p>
     </div>
   );

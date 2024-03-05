@@ -1,4 +1,3 @@
-{# templates/home.html.twig #}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +9,10 @@
         /* Estilos personalizados */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #87CEEB, #343a40);
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
         }
 
         .container {
@@ -20,27 +22,50 @@
 
         h1 {
             color: black;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 30px; 
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 27px; 
         }
 
         h4{
-            color: #343a40;
+            color: #fff; 
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             text-align: center;
-            font-size: 23px;
+            font-size: 21px;
         }
 
         .navbar-brand {
             margin-right: 70px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-        
+
+        /* Estilos para el logo */
+        .navbar-brand img {
+            max-width: 40px; /* Ajusta el tamaño del logo */
+            margin-right: 10px; /* Espacio entre el logo y el texto */
+            vertical-align: middle; /* Alinear verticalmente con el texto */
+        }
+
+        /* Estilos para los enlaces */
+        .navbar-nav .nav-link {
+            font-size: 20px; /* Tamaño de fuente más grande */
+            transition: font-size 0.3s; /* Transición suave de tamaño de fuente */
+        }
+
+        .navbar-nav .nav-link:hover {
+            font-size: 22px; /* Tamaño de fuente más grande al pasar el ratón */
+        }
+
+        /* Degradado para la barra de navegación */
+        .navbar {
+            background-image: linear-gradient(to right, #ff4500, #ffa500); /* Degradado de rojo a naranja */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand text-white" href="#">Bokksound</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand text-white" href="{{ path('home') }}"><img src="../uploads/images/logo.png" alt="Logo">Bokksound</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -61,7 +86,7 @@
 
 <div class="container">
     <h1 class="mt-5">¡BIENVENIDO A BOKKSOUND, LA MEJOR APP DE MÚSICA EN DIRECTO!</h1>
-    <img src="../uploads/images/logo.png" alt="logo" style="max-width: 70%;">
+    <img src="../uploads/images/logo.png" alt="logo" style="max-width: 65%;">
     <h4>Aqui podrás escuchar todo tipo de canciones, de cualquier época o año, sea cuál sea tu gusto, en el instante que quieras</h4>
 </div>
 

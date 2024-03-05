@@ -2,8 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-
 const Navbar = () => {
+  // Verificar si hay una sesión iniciada
+  const loggedIn = sessionStorage.getItem('loggedIn');
+
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    sessionStorage.clear(); // Borrar todas las variables de sesión
+    window.location.href = '/'; // Redirigir a la página principal
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -24,12 +32,28 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/acerca">Acerca</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Iniciar Sesión</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/usuario">Regístrate aquí</Link>
-            </li>
+            
+            {loggedIn ? (
+              <>
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>Cerrar Sesión</button>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/carrito">
+                    <img src="https://static.vecteezy.com/system/resources/previews/017/196/580/non_2x/shopping-cart-icon-on-transparent-background-free-png.png" alt="Carrito" style={{ width: '40px' }} /> {/* Imagen del icono del carrito */}
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">Iniciar Sesión</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/usuario">Regístrate aquí</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
@@ -38,5 +62,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 

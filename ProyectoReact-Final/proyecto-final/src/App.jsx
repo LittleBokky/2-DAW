@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Error from './pages/Error';
 import Productos from './pages/Productos'
 import Navbar from './componentes/navbar';
+import Carrito from './pages/Carrito';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="*" element={<Error />} />
+        <Route path="/carrito" element={<Carrito />} />
       </Routes>
     </Router>
   );

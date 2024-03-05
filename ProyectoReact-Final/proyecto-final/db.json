@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "b4b6",
+      "username": "carlo",
+      "password": "carlo"
+    },
+    {
+      "id": "bca9",
+      "username": "yes",
+      "password": "yes"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "nombre": "Camiseta",
+      "precio": 30,
+      "imagen": "./imagenes/camiseta.png"
+    }
+  ]
+}
