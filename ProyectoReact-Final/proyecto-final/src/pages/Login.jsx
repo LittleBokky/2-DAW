@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Navbar from '../componentes/navbar';
+import './Login.css'; // Importa el archivo CSS para los estilos del formulario
 
 const Login = () => {
-  // Definimos el estado para almacenar el nombre de usuario y la contraseña
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
 
-  // Función para manejar el cambio en los campos del formulario
   const handleChange = e => {
     setFormData({
       ...formData,
@@ -16,7 +14,6 @@ const Login = () => {
     });
   };
 
-  // Función para manejar el envío del formulario
   const handleSubmit = async e => {
     e.preventDefault();
     try {
@@ -24,10 +21,9 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         if (data.length > 0) {
-          // Almacenar los datos del usuario en variables de sesión
           sessionStorage.setItem('loggedIn', true);
           sessionStorage.setItem('username', formData.username);
-          window.location.href = '/'; // Redirigir al usuario a la página principal
+          window.location.href = '/';
         } else {
           alert('Usuario o contraseña incorrectos');
         }
@@ -41,8 +37,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="container">
+    <div className="login-container">
+      <div className="login-box">
         <h1>Iniciar Sesión</h1>
         <p>Ingresa tus credenciales para iniciar sesión.</p>
         <form onSubmit={handleSubmit}>
@@ -70,7 +66,7 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
+          <button type="submit" className="btn btn-danger">Iniciar Sesión</button>
         </form>
       </div>
     </div>

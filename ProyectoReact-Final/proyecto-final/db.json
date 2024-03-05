@@ -9,14 +9,32 @@
       "id": "bca9",
       "username": "yes",
       "password": "yes"
+    },
+    {
+      "id": "04f7",
+      "username": "Juan",
+      "password": "123"
     }
   ],
   "products": [
     {
       "id": "1",
-      "nombre": "Camiseta",
-      "precio": 30,
-      "imagen": "./imagenes/camiseta.png"
+      "nombre": "Camiseta MT HELM",
+      "precio": 50,
+      "imagen": "https://daensport.com/wp-content/uploads/2023/04/Camiseta-MC-Marino-Rojo-MTHelmets-MSI-2023-2-Detras.png"
+    },
+    {
+      "id": "2",
+      "nombre": "Pegatina Valentino Rossi",
+      "precio": 5,
+      "imagen": "https://m.media-amazon.com/images/I/61jvKnWU8NL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Gorra Repsol",
+      "precio": 20,
+      "imagen": "https://www.tophats-shop.com/69676-full_default/gorra-marc-marquez-93-motogp-repsol-blanco-rojo-marino.jpg"
     }
+   
   ]
 }

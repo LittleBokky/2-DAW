@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../componentes/navbar';
+import './Usuario.css'; // Importa el archivo CSS para los estilos del formulario
 
 const Usuario = () => {
   // Definimos el estado para almacenar los valores del formulario
@@ -40,8 +40,8 @@ const Usuario = () => {
   };
 
   return (
-    <div>
-      <div className="container">
+    <div className="login-container">
+      <div className="login-box">
         <h1>Regístrate aquí</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -68,7 +68,7 @@ const Usuario = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary">Registrarse</button>
+          <button type="submit" className="btn btn-danger">Registrarse</button>
         </form>
       </div>
     </div>
