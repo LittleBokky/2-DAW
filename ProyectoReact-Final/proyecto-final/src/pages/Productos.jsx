@@ -3,6 +3,20 @@ import React, { useState, useEffect } from 'react';
 const Productos = () => {
   // Estado para almacenar los productos
   const [products, setProducts] = useState([]);
+  // Estado para indicar si el usuario ha iniciado sesión
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // Verificar si el usuario ha iniciado sesión al montar el componente
+  useEffect(() => {
+    const checkLoginStatus = () => {
+      const userLoggedIn = sessionStorage.getItem('loggedIn');
+      if (userLoggedIn) {
+        setLoggedIn(true);
+      }
+    };
+
+    checkLoginStatus();
+  }, []);
 
   // Cargar los productos al montar el componente
   useEffect(() => {
@@ -24,9 +38,13 @@ const Productos = () => {
 
   // Función para agregar un producto al carrito
   const addToCart = (product) => {
-    const cart = JSON.parse(sessionStorage.getItem('carrito')) || [];
-    cart.push(product);
-    sessionStorage.setItem('carrito', JSON.stringify(cart));
+    if (loggedIn) {
+      const cart = JSON.parse(sessionStorage.getItem('carrito')) || [];
+      cart.push(product);
+      sessionStorage.setItem('carrito', JSON.stringify(cart));
+    } else {
+      alert('Debes iniciar sesión para agregar productos al carrito.');
+    }
   };
 
   return (

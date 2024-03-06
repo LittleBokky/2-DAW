@@ -14,6 +14,11 @@
       "id": "04f7",
       "username": "Juan",
       "password": "123"
+    },
+    {
+      "id": "0813",
+      "username": "hola",
+      "password": "123"
     }
   ],
   "products": [
@@ -25,8 +30,8 @@
     },
     {
       "id": "2",
-      "nombre": "Pegatina Valentino Rossi",
-      "precio": 5,
+      "nombre": "Videojuego MotoGP23",
+      "precio": 40,
       "imagen": "https://m.media-amazon.com/images/I/61jvKnWU8NL._AC_UF894,1000_QL80_.jpg"
     },
     {
@@ -34,7 +39,12 @@
       "nombre": "Gorra Repsol",
       "precio": 20,
       "imagen": "https://www.tophats-shop.com/69676-full_default/gorra-marc-marquez-93-motogp-repsol-blanco-rojo-marino.jpg"
+    },
+    {
+      "id": "4",
+      "nombre": "Camiseta MotoGP",
+      "precio": 30,
+      "imagen": "https://camisetasfutbolybaloncesto.com/wp-content/uploads/2023/03/image_f4d853ee-0572-4f28-bcf9-63dba84897e4.png"
     }
-   
   ]
 }
