@@ -77,5 +77,6 @@ class ProductoController extends AbstractController
         }
 
         return $this->redirectToRoute('app_producto_index', [], Response::HTTP_SEE_OTHER);
-    }
+    }   
 }
+

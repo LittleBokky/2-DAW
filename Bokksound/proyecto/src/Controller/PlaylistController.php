@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/playlist')]
 class PlaylistController extends AbstractController
 {
+    
     #[Route('/', name: 'app_playlist_index', methods: ['GET'])]
     public function index(PlaylistRepository $playlistRepository): Response
     {
@@ -42,7 +43,7 @@ class PlaylistController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_playlist_show', methods: ['GET'])]
+    #[Route('/playlist/{id}', name: 'app_playlist_show', methods: ['GET'])]
     public function show(Playlist $playlist): Response
     {
         return $this->render('playlist/show.html.twig', [

@@ -1,4 +1,15 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'attr': {'class': 'form'}}) }}
+    <div class="form-group">
+        {{ form_label(form.nombre, 'Nombre de la playlist', {'label_attr': {'class': 'control-label'}}) }}
+        {{ form_widget(form.nombre, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.user_id, 'Usuario', {'label_attr': {'class': 'control-label'}}) }}
+        {{ form_widget(form.user_id, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.cancion_id, 'Canciones', {'label_attr': {'class': 'control-label'}}) }}
+        {{ form_widget(form.cancion_id, {'attr': {'class': 'form-control', 'multiple': 'multiple'}}) }}
+    </div>
+    <button class="btn btn-primary">{{ button_label|default('Guardar') }}</button>
 {{ form_end(form) }}

@@ -1,35 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Playlist index{% endblock %}
+{% block title %}Playlist{% endblock %}
 
 {% block body %}
-    <h1>Playlist index</h1>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Playlist</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for playlist in playlists %}
-            <tr>
-                <td>{{ playlist.id }}</td>
-                <td>{{ playlist.nombre }}</td>
-                <td>
-                    <a href="{{ path('app_playlist_show', {'id': playlist.id}) }}">show</a>
-                    <a href="{{ path('app_playlist_edit', {'id': playlist.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="row">
+            {% for playlist in playlists %}
+                <div class="col-md-4 mb-4">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ playlist.nombre }}</h5>
+                            <a href="{{ path('app_playlist_show', {'id': playlist.id}) }}" class="btn btn-primary btn-sm">Show</a>
+                            <a href="{{ path('app_playlist_edit', {'id': playlist.id}) }}" class="btn btn-secondary btn-sm">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-12">
+                    <p class="text-center">No se ha encontrado ninguna playlist</p>
+                </div>
+            {% endfor %}
+        </div>
 
-    <a href="{{ path('app_playlist_new') }}">Create new</a>
+        <div class="text-center mt-4">
+            <a href="{{ path('app_playlist_new') }}" class="btn btn-success">+ Nueva Playlist</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            font-weight: bold;
+        }
+    </style>
 {% endblock %}

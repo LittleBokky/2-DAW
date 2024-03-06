@@ -22,7 +22,7 @@ class PlaylistType extends AbstractType
             ])
             ->add('cancion_id', EntityType::class, [
                 'class' => Cancion::class,
-                'choice_label' => 'id',
+                'choice_label' => 'titulo',
                 'multiple' => true,
             ])
         ;
