@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const Productos = () => {
   // Estado para almacenar los productos
@@ -42,8 +43,20 @@ const Productos = () => {
       const cart = JSON.parse(sessionStorage.getItem('carrito')) || [];
       cart.push(product);
       sessionStorage.setItem('carrito', JSON.stringify(cart));
+      // Mostrar la alerta de agregado al carrito
+      Swal.fire({
+        title: 'Producto agregado',
+        text: `El producto ${product.nombre} ha sido agregado al carrito.`,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
     } else {
-      alert('Debes iniciar sesión para agregar productos al carrito.');
+      Swal.fire({
+        title: '¡Inicie sesión!',
+        text: `El producto ${product.nombre} no ha sido agregado porque debe iniciar sesión.`,
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
     }
   };
 

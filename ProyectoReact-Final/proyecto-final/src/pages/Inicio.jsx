@@ -8,7 +8,7 @@ import '../App.css';
 
 const Inicio = () => {
   return (
-    <div>
+    <div className="pagina-fondo">
       <div className="container">
         <h1 className="mt-4">¡Ha vuelto MotoGP Jerez!</h1>
         <Carrusel />

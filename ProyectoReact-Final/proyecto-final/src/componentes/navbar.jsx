@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   // Verificar si hay una sesión iniciada
   const loggedIn = sessionStorage.getItem('loggedIn');
 
@@ -18,10 +24,10 @@ const Navbar = () => {
         <Link className="navbar-brand mx-4" to="/">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Moto_Gp_logo.svg/2560px-Moto_Gp_logo.svg.png" alt="Logo de MotoGP Jerez" style={{ width: '100px' }} />
         </Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/">Inicio</Link>
@@ -36,7 +42,7 @@ const Navbar = () => {
             {loggedIn ? (
               <>
                 <li className="nav-item">
-                  <button className="nav-link btn btn-link" onClick={handleLogout}>Cerrar Sesión</button>
+                  <button className="nav-link btn btn-link d-flex justify-content-center" onClick={handleLogout}>Cerrar Sesión</button>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/carrito">
@@ -62,4 +68,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

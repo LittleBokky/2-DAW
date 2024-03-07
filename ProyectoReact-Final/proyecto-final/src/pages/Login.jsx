@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css'; // Importa el archivo CSS para los estilos del formulario
+import Swal from 'sweetalert2'; // Importa SweetAlert
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -23,9 +24,23 @@ const Login = () => {
         if (data.length > 0) {
           sessionStorage.setItem('loggedIn', true);
           sessionStorage.setItem('username', formData.username);
-          window.location.href = '/';
+          // Mostrar alerta de inicio de sesión exitoso con SweetAlert
+          Swal.fire({
+            title: "¡Inicio de sesión exitoso!",
+            text: `¡Bienvenido ${formData.username}!`,
+            icon: "success"
+          });
+          // Esperar 2 segundos antes de redirigir al usuario al inicio
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 2000);
         } else {
-          alert('Usuario o contraseña incorrectos');
+          Swal.fire({
+            title: '¡Datos incorrectos!',
+            text: `Usuario y/o contraseña incorrectos`,
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
         }
       } else {
         throw new Error('Error al iniciar sesión');

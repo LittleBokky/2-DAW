@@ -19,12 +19,72 @@
       "id": "0813",
       "username": "hola",
       "password": "123"
+    },
+    {
+      "id": "b373",
+      "username": "chico",
+      "password": "123"
+    },
+    {
+      "id": "2942",
+      "username": "si",
+      "password": "si"
+    },
+    {
+      "id": "d326",
+      "username": "ale",
+      "password": "123"
+    },
+    {
+      "id": "5c21",
+      "username": "rafa",
+      "password": "123"
+    },
+    {
+      "id": "c3f3",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "d5d9",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "0f00",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "5561",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "e53f",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "349f",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "3d5e",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": "5333",
+      "username": "chicote",
+      "password": "1"
     }
   ],
   "products": [
     {
       "id": "1",
-      "nombre": "Camiseta MT HELM",
+      "nombre": "Camiseta MT HELMET",
       "precio": 50,
       "imagen": "https://daensport.com/wp-content/uploads/2023/04/Camiseta-MC-Marino-Rojo-MTHelmets-MSI-2023-2-Detras.png"
     },
