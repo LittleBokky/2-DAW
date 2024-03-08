@@ -3,6 +3,14 @@
   src: url('./componentes/coolvetica\ rg.otf') format('otf');
 }
 
+.contenido-blanko {
+  background-color: #fff; /* Puedes ajustar el color de fondo según tus preferencias */
+  padding: 20px; /* Ajusta el espaciado interno según sea necesario */
+  border-radius: 8px; /* Opcional: agrega bordes redondeados al contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra */
+}
+
+
 .App {
   text-align: center;
 }

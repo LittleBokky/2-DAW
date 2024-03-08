@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
@@ -46,8 +47,8 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/carrito">
-                    <img src="https://static.vecteezy.com/system/resources/previews/017/196/580/non_2x/shopping-cart-icon-on-transparent-background-free-png.png" alt="Carrito" style={{ width: '40px' }} /> {/* Imagen del icono del carrito */}
-                  </Link>
+                    <img src="https://static.vecteezy.com/system/resources/previews/017/196/580/non_2x/shopping-cart-icon-on-transparent-background-free-png.png" alt="Carrito" style={{ width: '40px' }} />
+                  </Link> 
                 </li>
               </>
             ) : (

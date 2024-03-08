@@ -53,7 +53,7 @@ const Productos = () => {
     } else {
       Swal.fire({
         title: '¡Inicie sesión!',
-        text: `El producto ${product.nombre} no ha sido agregado porque debe iniciar sesión.`,
+        text: `El producto ${product.nombre} no ha sido agregado al carrito porque debe iniciar sesión.`,
         icon: 'error',
         confirmButtonText: 'OK'
       });
